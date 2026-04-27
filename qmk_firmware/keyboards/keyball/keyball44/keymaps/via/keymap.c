@@ -69,3 +69,18 @@ void oledkit_render_info_user(void) {
     keyball_oled_render_layerinfo();
 }
 #endif
+
+// combo setting
+#ifdef COMBO_ENABLE
+
+//kana toggle
+const uint16_t PROGMEM my_kana[] = {KC_D, KC_F, COMBO_END};
+
+//tab
+const uint16_t PROGMEM my_tab[] = {KC_A, KC_S, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(my_kana, KC_GRAVE),
+    COMBO(my_tab, KC_TAB),
+};
+#endif
